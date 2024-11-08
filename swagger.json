@@ -1,0 +1,425 @@
+swagger: '2.0'
+info:
+  title: SpyCat API
+  description: API for managing SpyCat records
+  version: v1
+host: localhost:8000
+schemes:
+- http
+basePath: /api
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+- Basic: []
+paths:
+  /missions/:
+    get:
+      operationId: missions_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    post:
+      operationId: missions_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Mission'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    parameters: []
+  /missions/{id}/:
+    get:
+      operationId: missions_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    put:
+      operationId: missions_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Mission'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    patch:
+      operationId: missions_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Mission'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    delete:
+      operationId: missions_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - missions
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this mission.
+      required: true
+      type: integer
+  /missions/{id}/mark-as-completed/:
+    post:
+      operationId: missions_mark_as_completed
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Mission'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Mission'
+      tags:
+      - missions
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this mission.
+      required: true
+      type: integer
+  /notes/:
+    get:
+      operationId: notes_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Note'
+      tags:
+      - notes
+    post:
+      operationId: notes_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Note'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Note'
+      tags:
+      - notes
+    parameters: []
+  /notes/{id}/:
+    get:
+      operationId: notes_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Note'
+      tags:
+      - notes
+    put:
+      operationId: notes_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Note'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Note'
+      tags:
+      - notes
+    patch:
+      operationId: notes_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Note'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Note'
+      tags:
+      - notes
+    delete:
+      operationId: notes_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - notes
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this note.
+      required: true
+      type: integer
+  /spycats/:
+    get:
+      operationId: spycats_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SpyCat'
+      tags:
+      - spycats
+    post:
+      operationId: spycats_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SpyCat'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/SpyCat'
+      tags:
+      - spycats
+    parameters: []
+  /spycats/{id}/:
+    get:
+      operationId: spycats_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SpyCat'
+      tags:
+      - spycats
+    put:
+      operationId: spycats_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SpyCatSalary'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SpyCatSalary'
+      tags:
+      - spycats
+    patch:
+      operationId: spycats_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SpyCatSalary'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SpyCatSalary'
+      tags:
+      - spycats
+    delete:
+      operationId: spycats_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - spycats
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this spy cat.
+      required: true
+      type: integer
+definitions:
+  Note:
+    required:
+    - text
+    - target
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      text:
+        title: Text
+        type: string
+        minLength: 1
+      target:
+        title: Target
+        type: integer
+  Target:
+    required:
+    - name
+    - country
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      country:
+        title: Country
+        type: string
+        maxLength: 255
+        minLength: 1
+      is_completed:
+        title: Is completed
+        type: boolean
+      notes:
+        type: array
+        items:
+          $ref: '#/definitions/Note'
+        readOnly: true
+  Mission:
+    required:
+    - name
+    - targets
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      assigned_cat:
+        title: Assigned cat
+        type: integer
+        x-nullable: true
+      is_completed:
+        title: Is completed
+        type: boolean
+        readOnly: true
+      targets:
+        type: array
+        items:
+          $ref: '#/definitions/Target'
+  SpyCat:
+    required:
+    - name
+    - years_of_experience
+    - breed
+    - salary
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      years_of_experience:
+        title: Years of experience
+        type: integer
+        maximum: 2147483647
+        minimum: -2147483648
+      breed:
+        title: Breed
+        type: string
+        maxLength: 100
+        minLength: 1
+      salary:
+        title: Salary
+        type: string
+        format: decimal
+  SpyCatSalary:
+    required:
+    - salary
+    type: object
+    properties:
+      salary:
+        title: Salary
+        type: string
+        format: decimal

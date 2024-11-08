@@ -1,0 +1,6 @@
+Django>=3.2,<4.0
+djangorestframework>=3.12
+requests>=2.26
+drf-yasg>=1.20
+django-filter>=2.4
+psycopg2>=2.9
